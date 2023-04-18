@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Project</title>
+    <link rel="stylesheet" type="text/css" href="/css/particularProject.css">
+</head>
+<body>
+<h2><%=project.name %></h2>
+<a href="/create-Issue_page/<%=project._id%>" class="button">Create Issue</a>
+<a href="/" class="button">All Projects</a>
+
+<h1>Issues related to <%= project.name %></h1>
+
+<!-- Filter options for labels and author -->
+<form action="/filter/<%=project._id%>" method="post">
+  <label for="labelFilter">Filter by label:</label>
+  <select name="labelFilter" id="labelFilter">
+    <option value="">All</option>
+    <% labels.forEach(function(label) { %>
+      <option value="<%= label %>"><%= label %></option>
+    <% }); %>
+  </select>
+
+  <label for="authorFilter">Filter by author:</label>
+  <select name="authorFilter" id="authorFilter">
+    <option value="">All</option>
+    <% authors.forEach(function(author) { %>
+      <option value="<%= author %>"><%= author %></option>
+    <% }); %>
+  </select>
+
+  <button type="submit">Filter</button>
+</form>
+
+<!-- List of issues -->
+<ul>
+  <% projectIssues.forEach(function(issue) { %>
+    <li>
+      <h2><%= issue.title %></h2>
+      <p><%= issue.description %></p>
+     
+      <p>Author: <%= issue.author %></p>
+    </li>
+  <% }); %>
+</ul>
+
+
+    </body>
+    </html>

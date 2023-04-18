@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>List of Projects</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+<body>
+	<h1>List of Projects</h1>
+    <a href="/create-project-page" id="create-project">Create Project</a>
+	<% projects.forEach(function(project) { %>
+		<div class="project">
+			<a href="/proj/<%=project._id%>"><h2><%= project.name %></h2></a>
+			<p><%= project.description %></p>
+			<p>Author: <%= project.author %></p>
+		</div>
+	<% }); %>
+     
+</body>
+</html>

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.project {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.project h2 {
+    margin-top: 0;
+}
+
+.project p {
+    margin: 10px 0;
+}
+
+#create-project{
+    height: 75px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    background-color: greenyellow;
+    text-decoration: none;
+
+}
